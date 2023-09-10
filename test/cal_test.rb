@@ -1,11 +1,11 @@
-require 'bundler/setup'
+require "bundler/setup"
 require "minitest/autorun"
 
 require "cal"
 
 class CalTest < Minitest::Test
   def test_sanity
-    expected = <<~CAL.gsub("\n","\r\n").gsub(",","\\,")
+    expected = <<~CAL.gsub("\n", "\r\n").gsub(",", "\\,")
       BEGIN:VCALENDAR
       VERSION:2.0
       PRODID:icalendar-ruby
@@ -23,7 +23,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -38,7 +38,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -53,7 +53,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -68,7 +68,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -83,7 +83,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -98,7 +98,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -113,7 +113,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -128,7 +128,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -143,7 +143,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -158,7 +158,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -173,7 +173,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -188,7 +188,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -203,7 +203,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -218,7 +218,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -233,7 +233,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -248,7 +248,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -263,7 +263,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -278,7 +278,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -293,7 +293,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -308,7 +308,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -323,7 +323,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -338,7 +338,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -353,7 +353,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -368,7 +368,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -383,7 +383,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -398,7 +398,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -413,7 +413,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -428,7 +428,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -443,7 +443,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -458,7 +458,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -473,7 +473,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -488,7 +488,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -503,7 +503,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -518,7 +518,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -533,7 +533,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -548,7 +548,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -563,7 +563,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -578,7 +578,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -593,7 +593,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -608,7 +608,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -623,7 +623,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -638,7 +638,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -653,7 +653,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -668,7 +668,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -683,7 +683,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -698,7 +698,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -713,7 +713,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -728,7 +728,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -743,7 +743,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -758,7 +758,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -773,7 +773,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -788,7 +788,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -803,7 +803,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -818,7 +818,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -833,7 +833,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -848,7 +848,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -863,7 +863,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -878,7 +878,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -893,7 +893,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -908,7 +908,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -923,7 +923,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -938,7 +938,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -953,7 +953,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -968,7 +968,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -983,7 +983,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -998,7 +998,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1013,7 +1013,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1028,7 +1028,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1043,7 +1043,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1058,7 +1058,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1073,7 +1073,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1088,7 +1088,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1103,7 +1103,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1118,7 +1118,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1133,7 +1133,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1148,7 +1148,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1163,7 +1163,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1178,7 +1178,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1193,7 +1193,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1208,7 +1208,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1223,7 +1223,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1238,7 +1238,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1253,7 +1253,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1268,7 +1268,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1283,7 +1283,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1298,7 +1298,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1313,7 +1313,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1328,7 +1328,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1343,7 +1343,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1358,7 +1358,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1373,7 +1373,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1388,7 +1388,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1403,7 +1403,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1418,7 +1418,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1433,7 +1433,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1448,7 +1448,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1463,7 +1463,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1478,7 +1478,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1493,7 +1493,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1508,7 +1508,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1523,7 +1523,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1538,7 +1538,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1553,7 +1553,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1568,7 +1568,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1583,7 +1583,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1598,7 +1598,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1613,7 +1613,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1628,7 +1628,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1643,7 +1643,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1658,7 +1658,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1673,7 +1673,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1688,7 +1688,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1703,7 +1703,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1718,7 +1718,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1733,7 +1733,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1748,7 +1748,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1763,7 +1763,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1778,7 +1778,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1793,7 +1793,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1808,7 +1808,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1823,7 +1823,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1838,7 +1838,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1853,7 +1853,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1868,7 +1868,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1883,7 +1883,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1898,7 +1898,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1913,7 +1913,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1928,7 +1928,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1943,7 +1943,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1958,7 +1958,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1973,7 +1973,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -1988,7 +1988,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2003,7 +2003,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2018,7 +2018,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2033,7 +2033,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2048,7 +2048,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2063,7 +2063,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2078,7 +2078,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2093,7 +2093,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2108,7 +2108,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2123,7 +2123,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2138,7 +2138,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2153,7 +2153,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2168,7 +2168,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2183,7 +2183,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2198,7 +2198,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2213,7 +2213,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2228,7 +2228,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2243,7 +2243,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2258,7 +2258,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2273,7 +2273,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2288,7 +2288,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2303,7 +2303,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2318,7 +2318,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2333,7 +2333,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2348,7 +2348,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2363,7 +2363,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2378,7 +2378,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2393,7 +2393,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2408,7 +2408,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2423,7 +2423,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2438,7 +2438,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2453,7 +2453,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2468,7 +2468,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2483,7 +2483,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2498,7 +2498,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2513,7 +2513,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2528,7 +2528,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2543,7 +2543,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2558,7 +2558,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2573,7 +2573,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2588,7 +2588,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2603,7 +2603,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2618,7 +2618,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2633,7 +2633,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2648,7 +2648,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2663,7 +2663,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2678,7 +2678,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2693,7 +2693,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2708,7 +2708,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2723,7 +2723,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2738,7 +2738,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2753,7 +2753,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2768,7 +2768,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2783,7 +2783,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2798,7 +2798,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2813,7 +2813,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2828,7 +2828,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2843,7 +2843,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2858,7 +2858,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2873,7 +2873,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2888,7 +2888,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2903,7 +2903,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2918,7 +2918,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2933,7 +2933,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2948,7 +2948,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2963,7 +2963,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2978,7 +2978,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -2993,7 +2993,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3008,7 +3008,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3023,7 +3023,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3038,7 +3038,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3053,7 +3053,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3068,7 +3068,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3083,7 +3083,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3098,7 +3098,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3113,7 +3113,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3128,7 +3128,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3143,7 +3143,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3158,7 +3158,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3173,7 +3173,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3188,7 +3188,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3203,7 +3203,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3218,7 +3218,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3233,7 +3233,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3248,7 +3248,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3263,7 +3263,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3278,7 +3278,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3293,7 +3293,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3308,7 +3308,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3323,7 +3323,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3338,7 +3338,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3353,7 +3353,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3368,7 +3368,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3383,7 +3383,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3398,7 +3398,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3413,7 +3413,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3428,7 +3428,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3443,7 +3443,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3458,7 +3458,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3473,7 +3473,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3488,7 +3488,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3503,7 +3503,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3518,7 +3518,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3533,7 +3533,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3548,7 +3548,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3563,7 +3563,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3578,7 +3578,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3593,7 +3593,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3608,7 +3608,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3623,7 +3623,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3638,7 +3638,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3653,7 +3653,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3668,7 +3668,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3683,7 +3683,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3698,7 +3698,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3713,7 +3713,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3728,7 +3728,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3743,7 +3743,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3758,7 +3758,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3773,7 +3773,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3788,7 +3788,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3803,7 +3803,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3818,7 +3818,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3833,7 +3833,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3848,7 +3848,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3863,7 +3863,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3878,7 +3878,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3893,7 +3893,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3908,7 +3908,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3923,7 +3923,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3938,7 +3938,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3953,7 +3953,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3968,7 +3968,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3983,7 +3983,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -3998,7 +3998,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4013,7 +4013,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4028,7 +4028,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4043,7 +4043,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4058,7 +4058,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4073,7 +4073,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4088,7 +4088,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4103,7 +4103,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4118,7 +4118,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4133,7 +4133,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4148,7 +4148,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4163,7 +4163,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4178,7 +4178,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4193,7 +4193,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4208,7 +4208,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4223,7 +4223,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4238,7 +4238,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4253,7 +4253,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4268,7 +4268,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4283,7 +4283,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4298,7 +4298,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4313,7 +4313,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4328,7 +4328,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4343,7 +4343,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4358,7 +4358,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4373,7 +4373,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4388,7 +4388,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4403,7 +4403,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4418,7 +4418,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4433,7 +4433,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4448,7 +4448,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4463,7 +4463,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4478,7 +4478,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4493,7 +4493,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4508,7 +4508,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4523,7 +4523,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Ph E is starting in 5 minutes\, in Gym 4
+      SUMMARY:Ph E is starting in 5 minutes, in Gym 4
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4538,7 +4538,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:English 8 is starting in 5 minutes\, in PT02
+      SUMMARY:English 8 is starting in 5 minutes, in PT02
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4553,7 +4553,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Science 8 is starting in 5 minutes\, in C216
+      SUMMARY:Science 8 is starting in 5 minutes, in C216
       END:VALARM
       END:VEVENT
       BEGIN:VEVENT
@@ -4568,7 +4568,7 @@ class CalTest < Minitest::Test
       BEGIN:VALARM
       ACTION:DISPLAY
       TRIGGER:-PT5M
-      SUMMARY:Wood Work is starting in 5 minutes\, in B103
+      SUMMARY:Wood Work is starting in 5 minutes, in B103
       END:VALARM
       END:VEVENT
       END:VCALENDAR
