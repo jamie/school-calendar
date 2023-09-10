@@ -1,71 +1,81 @@
 require 'icalendar'
 
-class Cal
-  def initialize(uuid)
-    @cal = Icalendar::Calendar.new
+module CalSeeder
+  def find(uuid)
+    cal = new(uuid)
     if uuid == "018a805b-d352-76ec-9792-044d683090c2"
-      seed_cal_data
+      seed_cal_data(cal, cal.icalendar)
     end
-
-    @cal.publish
+    cal
   end
 
-  def to_ical
-    @cal.to_ical
-  end
+  def seed_cal_data(cal, icalendar)
+    cal.set_term(
+      starts_on: Date.new(2023, 9, 4),
+      ends_on: Date.new(2023, 12, 31), # Just this year
+      # end_date = Date.new(2024, 6, 28),
+      non_instructional_days: [
+        Date.new(2023, 9, 4),
+        Date.new(2023, 10, 2),
+        Date.new(2023, 10, 9),
+        Date.new(2023, 11, 13),
 
-  def to_html
-    @cal.to_ical
-  end
+        # Christmas Break
+        Date.new(2023, 12, 25),
+        Date.new(2023, 12, 26),
+        Date.new(2023, 12, 27),
+        Date.new(2023, 12, 28),
+        Date.new(2023, 12, 29),
+        Date.new(2024, 1, 1),
+        Date.new(2024, 1, 2),
+        Date.new(2024, 1, 3),
+        Date.new(2024, 1, 4),
+        Date.new(2024, 1, 5),
 
-  private
+        Date.new(2024, 2, 4),
+        Date.new(2024, 2, 5),
+        Date.new(2024, 2, 19),
 
-  def seed_cal_data
-    non_instructional_days = [
-      Date.new(2023, 9, 4),
-      Date.new(2023, 10, 2),
-      Date.new(2023, 10, 9),
-      Date.new(2023, 11, 13),
+        # Spring Break
+        Date.new(2024, 3, 11),
+        Date.new(2024, 3, 12),
+        Date.new(2024, 3, 13),
+        Date.new(2024, 3, 14),
+        Date.new(2024, 3, 15),
+        Date.new(2024, 3, 18),
+        Date.new(2024, 3, 19),
+        Date.new(2024, 3, 20),
+        Date.new(2024, 3, 21),
+        Date.new(2024, 3, 22),
 
-      # Christmas Break
-      Date.new(2023, 12, 25),
-      Date.new(2023, 12, 26),
-      Date.new(2023, 12, 27),
-      Date.new(2023, 12, 28),
-      Date.new(2023, 12, 29),
-      Date.new(2024, 1, 1),
-      Date.new(2024, 1, 2),
-      Date.new(2024, 1, 3),
-      Date.new(2024, 1, 4),
-      Date.new(2024, 1, 5),
+        Date.new(2024, 3, 29),
+        Date.new(2024, 4, 1),
+        Date.new(2024, 4, 29),
+        Date.new(2024, 5, 20),
+        Date.new(2024, 6, 27),
+        Date.new(2024, 6, 28),
+      ]
+    )
 
-      Date.new(2024, 2, 4),
-      Date.new(2024, 2, 5),
-      Date.new(2024, 2, 19),
+    cal.set_classes(
+      [
+        { block: "A", name: "Wood Work", room: "B103"},
+        { block: "B", name: "Science 8", room: "C216"},
+        { block: "C", name: "English 8", room: "PT02"},
+        { block: "D", name: "Ph E", room: "Gym 4"},
+      ]
 
-      # Spring Break
-      Date.new(2024, 3, 11),
-      Date.new(2024, 3, 12),
-      Date.new(2024, 3, 13),
-      Date.new(2024, 3, 14),
-      Date.new(2024, 3, 15),
-      Date.new(2024, 3, 18),
-      Date.new(2024, 3, 19),
-      Date.new(2024, 3, 20),
-      Date.new(2024, 3, 21),
-      Date.new(2024, 3, 22),
-
-      Date.new(2024, 3, 29),
-      Date.new(2024, 4, 1),
-      Date.new(2024, 4, 29),
-      Date.new(2024, 5, 20),
-      Date.new(2024, 6, 27),
-      Date.new(2024, 6, 28),
-    ]
-
-    start_date = Date.new(2023, 9, 4)
-    end_date = Date.new(2023, 12, 31) # Just this year
-    # end_date = Date.new(2024, 6, 28)
+      # TODO: move to this, and filter when building calendar
+      # classes = [
+      #   {
+      #     block: "A",
+      #     name: "Wood Work",
+      #     room: "B103",
+      #     teacher: "Mr. Smith",
+      #     days: Date.new(2023, 9, 4)..Date.new(2023, 10, 3)
+      #   },
+      # ]
+    )
 
     block_rotation = [
       nil,
@@ -121,34 +131,11 @@ class Cal
     # ]
     # durations = [nil, 67, 82, 82, 82, 67]
 
-    classes = {
-      "A" => {name: "Wood Work", room: "B103"},
-      "B" => {name: "Science 8", room: "C216"},
-      "C" => {name: "English 8", room: "PT02"},
-      "D" => {name: "Ph E", room: "Gym 4"},
-    }
-
-    # TODO: move to this, and filter when building calendar
-    # classes = [
-    #   {
-    #     block: "A",
-    #     name: "Wood Work",
-    #     room: "B103",
-    #     teacher: "Mr. Smith",
-    #     days: Date.new(2023, 9, 4)..Date.new(2023, 10, 3)
-    #   },
-    # ]
-
     # TODO: Semesters fall vs spring
     # TODO: Block A rotates 8 classes over fall semester
     # TODO: Teacher names
 
-    # Always run start_date to end_date for consistent Friday
-    # schedule, even if we only output a few weeks of classes.
-    start_date.upto(end_date) do |date|
-      next if non_instructional_days.include?(date)
-      next if date.saturday? || date.sunday?
-
+    cal.each_instructional_day do |date|
       day = school[date.wday]
       blocks = day[:blocks].next
       times = day[:times]
@@ -157,10 +144,10 @@ class Cal
       # TODO: next unless ((10.days.ago)..(21.days.from_now)).cover?(date)
 
       blocks.zip(times).each do |b, t|
-        klass = classes[b]
+        klass = cal.class_for_block(b)
         dtstart = DateTime.new(date.year, date.month, date.day, t[0], t[1])
         dtend = DateTime.new(date.year, date.month, date.day, t[0], t[1]) + Rational(duration * 60, 86400)
-        @cal.event do |e|
+        icalendar.event do |e|
           # Time
           e.dtstamp     = Icalendar::Values::DateTime.new(dtstart)
           e.dtstart     = Icalendar::Values::DateTime.new(dtstart)
@@ -177,6 +164,52 @@ class Cal
           e.ip_class    = "PUBLIC"
         end
       end
+    end
+  end
+end
+
+class Cal
+  extend CalSeeder # Vaguely quacks ActiveRecord
+  attr_reader :icalendar
+
+  attr_reader :starts_on, :ends_on, :non_instructional_days
+
+  def initialize(uuid)
+    @icalendar = Icalendar::Calendar.new
+  end
+
+  def to_ical
+    @icalendar.publish
+    @icalendar.to_ical
+  end
+
+  def to_html
+    @icalendar.publish
+    @icalendar.to_ical
+  end
+
+  def set_term(starts_on:, ends_on:, non_instructional_days: [])
+    @starts_on = starts_on
+    @ends_on = ends_on
+    @non_instructional_days = non_instructional_days
+  end
+
+  def set_classes(classes)
+    @classes = classes
+  end
+
+  def class_for_block(block)
+    @classes.detect{|klass| klass[:block] == block }
+  end
+
+  def each_instructional_day
+    # Always run from starts_on to ends_on for consistent rotating
+    # schedules, even if we only output a few weeks of classes.
+    starts_on.upto(ends_on) do |date|
+      next if non_instructional_days.include?(date)
+      next if date.saturday? || date.sunday?
+
+      yield date
     end
   end
 end

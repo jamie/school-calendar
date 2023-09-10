@@ -11,7 +11,7 @@ class App < Roda
 
     r.on "calendar" do
       r.on String do |uuid|
-        cal = Cal.new(uuid)
+        cal = Cal.find(uuid)
         r.get do
           r.ics do
             response["Content-Type"] = "text/calendar"

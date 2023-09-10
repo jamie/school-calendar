@@ -4573,7 +4573,7 @@ class CalTest < Minitest::Test
       END:VEVENT
       END:VCALENDAR
     CAL
-    actual = Cal.new("018a805b-d352-76ec-9792-044d683090c2").to_ical
+    actual = Cal.find("018a805b-d352-76ec-9792-044d683090c2").to_ical
 
     # Normalize UIDs which are randomly generated
     expected.gsub!(/UID:[0-9a-f-]+/, "UID:")
