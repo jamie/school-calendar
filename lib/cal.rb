@@ -1,4 +1,4 @@
-require 'icalendar'
+require "icalendar"
 
 module CalSeeder
   def find(uuid)
@@ -53,18 +53,17 @@ module CalSeeder
         Date.new(2024, 4, 29),
         Date.new(2024, 5, 20),
         Date.new(2024, 6, 27),
-        Date.new(2024, 6, 28),
+        Date.new(2024, 6, 28)
       ]
     )
 
     cal.set_classes(
       [
-        { block: "A", name: "Wood Work", room: "B103"},
-        { block: "B", name: "Science 8", room: "C216"},
-        { block: "C", name: "English 8", room: "PT02"},
-        { block: "D", name: "Ph E", room: "Gym 4"},
+        {block: "A", name: "Wood Work", room: "B103"},
+        {block: "B", name: "Science 8", room: "C216"},
+        {block: "C", name: "English 8", room: "PT02"},
+        {block: "D", name: "Ph E", room: "Gym 4"}
       ]
-
       # TODO: move to this, and filter when building calendar
       # classes = [
       #   {
@@ -82,31 +81,31 @@ module CalSeeder
       %w[A B C D], # Monday
       %w[C D A B], # Tuesday
       %w[B A D C], # Wednesday
-      %w[D C B A], # Thursday
+      %w[D C B A] # Thursday
     ]
     school = {
       1 => { # Monday
-        times: [[8,30], [9,48], [11,34], [12,53]],
+        times: [[8, 30], [9, 48], [11, 34], [12, 53]],
         duration: 67,
         blocks: block_rotation[1..1].cycle
       },
       2 => { # Tuesday
-        times: [[8,30], [10,3], [12,4], [13,38]],
+        times: [[8, 30], [10, 3], [12, 4], [13, 38]],
         duration: 82,
         blocks: block_rotation[2..2].cycle
       },
       3 => { # Wednesday
-        times: [[8,30], [10,3], [12,4], [13,38]],
+        times: [[8, 30], [10, 3], [12, 4], [13, 38]],
         duration: 82,
         blocks: block_rotation[3..3].cycle
       },
       4 => { # Thursday
-        times: [[8,30], [10,3], [12,4], [13,38]],
+        times: [[8, 30], [10, 3], [12, 4], [13, 38]],
         duration: 82,
         blocks: block_rotation[4..4].cycle
       },
       5 => { # Friday
-        times: [[8,30], [9,48], [11,34], [12,53]],
+        times: [[8, 30], [9, 48], [11, 34], [12, 53]],
         duration: 67,
         blocks: block_rotation[1..4].cycle
       }
@@ -149,19 +148,19 @@ module CalSeeder
         dtend = DateTime.new(date.year, date.month, date.day, t[0], t[1]) + Rational(duration * 60, 86400)
         icalendar.event do |e|
           # Time
-          e.dtstamp     = Icalendar::Values::DateTime.new(dtstart)
-          e.dtstart     = Icalendar::Values::DateTime.new(dtstart)
-          e.dtend       = Icalendar::Values::DateTime.new(dtend)
+          e.dtstamp = Icalendar::Values::DateTime.new(dtstart)
+          e.dtstart = Icalendar::Values::DateTime.new(dtstart)
+          e.dtend = Icalendar::Values::DateTime.new(dtend)
           # Alarm
           e.alarm do |a|
             a.summary = "#{klass[:name]} is starting in 5 minutes, in #{klass[:room]}"
             a.trigger = "-PT5M"
           end
           # Content
-          e.summary     = "#{b}: #{klass[:name]}"
+          e.summary = "#{b}: #{klass[:name]}"
           e.description = "#{b}: #{klass[:name]}" # TODO: Add teacher?
-          e.location    = klass[:room]
-          e.ip_class    = "PUBLIC"
+          e.location = klass[:room]
+          e.ip_class = "PUBLIC"
         end
       end
     end
@@ -199,7 +198,7 @@ class Cal
   end
 
   def class_for_block(block)
-    @classes.detect{|klass| klass[:block] == block }
+    @classes.detect { |klass| klass[:block] == block }
   end
 
   def each_instructional_day
