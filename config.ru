@@ -1,33 +1,23 @@
 require "roda"
+require "./cal"
 
 class App < Roda
+  plugin :type_routing, types: {ics: "text/calendar"}
+
   route do |r|
-    # GET / request
     r.root do
-      r.redirect "/hello"
+      "404"
     end
 
-    # /hello branch
-    r.on "hello" do
-      # Set variable for all routes in /hello branch
-      @greeting = 'Hellos'
-
-      # GET /hello/world request
-      r.get "world" do
-        "#{@greeting} world!"
-      end
-
-      # /hello request
-      r.is do
-        # GET /hello request
+    r.on "calendar" do
+      r.on String do |uuid|
+        cal = Cal.new(uuid)
         r.get do
-          "#{@greeting}!"
-        end
-
-        # POST /hello request
-        r.post do
-          puts "Someone said #{@greeting}!"
-          r.redirect
+          r.ics do
+            response["Content-Type"] = "text/calendar"
+            cal.to_ical
+          end
+          "<pre>#{cal.to_html}</pre>"
         end
       end
     end
