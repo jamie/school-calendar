@@ -10,3 +10,7 @@ gem "roda"
 # Application
 gem "icalendar"
 gem "uuid7"
+
+group :test do
+  gem "minitest"
+end

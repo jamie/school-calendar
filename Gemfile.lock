@@ -4,6 +4,7 @@ GEM
     icalendar (2.9.0)
       ice_cube (~> 0.16)
     ice_cube (0.16.4)
+    minitest (5.20.0)
     nio4r (2.5.9)
     puma (6.3.1)
       nio4r (~> 2.0)
@@ -20,6 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   icalendar
+  minitest
   puma
   roda
   uuid7
