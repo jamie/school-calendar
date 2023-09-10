@@ -1,5 +1,5 @@
 require "roda"
-require "./cal"
+require "./lib/cal"
 
 class App < Roda
   plugin :type_routing, types: {ics: "text/calendar"}

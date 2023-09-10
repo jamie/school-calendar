@@ -162,6 +162,7 @@ class Cal
         dtend = DateTime.new(date.year, date.month, date.day, t[0], t[1]) + Rational(duration * 60, 86400)
         @cal.event do |e|
           # Time
+          e.dtstamp     = Icalendar::Values::DateTime.new(dtstart)
           e.dtstart     = Icalendar::Values::DateTime.new(dtstart)
           e.dtend       = Icalendar::Values::DateTime.new(dtend)
           # Alarm
