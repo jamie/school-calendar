@@ -10,7 +10,7 @@ module CalSeeder
   end
 
   def seed_cal_data(cal, icalendar)
-    cal.set_term(
+    cal.seed_term(
       starts_on: Date.new(2023, 9, 4),
       ends_on: Date.new(2023, 12, 31), # Just this year
       # end_date = Date.new(2024, 6, 28),
@@ -57,24 +57,17 @@ module CalSeeder
       ]
     )
 
-    cal.set_classes(
+    cal.seed_classes(
+      # TODO: Add teacher names, days of term for shorter class blocks
       [
         {block: "A", name: "Wood Work", room: "B103"},
         {block: "B", name: "Science 8", room: "C216"},
         {block: "C", name: "English 8", room: "PT02"},
         {block: "D", name: "Ph E", room: "Gym 4"}
       ]
-      # TODO: move to this, and filter when building calendar
-      # classes = [
-      #   {
-      #     block: "A",
-      #     name: "Wood Work",
-      #     room: "B103",
-      #     teacher: "Mr. Smith",
-      #     days: Date.new(2023, 9, 4)..Date.new(2023, 10, 3)
-      #   },
-      # ]
     )
+
+    ###### Above: Normalized, below: hardcoded logic
 
     block_rotation = [
       nil,
@@ -143,7 +136,7 @@ module CalSeeder
       # TODO: next unless ((10.days.ago)..(21.days.from_now)).cover?(date)
 
       blocks.zip(times).each do |b, t|
-        klass = cal.class_for_block(b)
+        klass = cal.class_for_block_and_date(b, date)
         dtstart = DateTime.new(date.year, date.month, date.day, t[0], t[1])
         dtend = DateTime.new(date.year, date.month, date.day, t[0], t[1]) + Rational(duration * 60, 86400)
         icalendar.event do |e|
@@ -171,7 +164,10 @@ class Cal
   extend CalSeeder # Vaguely quacks ActiveRecord
   attr_reader :icalendar
 
+  # Term
   attr_reader :starts_on, :ends_on, :non_instructional_days
+  # Classes
+  attr_reader :classes
 
   def initialize(uuid)
     @icalendar = Icalendar::Calendar.new
@@ -187,23 +183,26 @@ class Cal
     @icalendar.to_ical
   end
 
-  def set_term(starts_on:, ends_on:, non_instructional_days: [])
+  def seed_term(starts_on:, ends_on:, non_instructional_days: [])
     @starts_on = starts_on
     @ends_on = ends_on
     @non_instructional_days = non_instructional_days
   end
 
-  def set_classes(classes)
+  def seed_classes(classes)
     @classes = classes
   end
 
-  def class_for_block(block)
-    @classes.detect { |klass| klass[:block] == block }
+  def class_for_block_and_date(block, date)
+    classes.detect { |klass|
+      next unless klass[:days].nil? || klass[:days].cover?(date)
+      klass[:block] == block
+    }
   end
 
   def each_instructional_day
-    # Always run from starts_on to ends_on for consistent rotating
-    # schedules, even if we only output a few weeks of classes.
+    # Always generate full schedule for consistent cycles,
+    # even if caller only needs a subset of dates.
     starts_on.upto(ends_on) do |date|
       next if non_instructional_days.include?(date)
       next if date.saturday? || date.sunday?
