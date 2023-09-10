@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    icalendar (2.9.0)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.4)
+    nio4r (2.5.9)
+    puma (6.3.1)
+      nio4r (~> 2.0)
+    rack (3.0.8)
+    roda (3.71.0)
+      rack
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  icalendar
+  puma
+  roda
+
+RUBY VERSION
+   ruby 3.2.2p53
+
+BUNDLED WITH
+   2.4.10
